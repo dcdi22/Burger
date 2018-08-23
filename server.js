@@ -1,3 +1,4 @@
+var path = require('path');
 var express = require("express");
 var bodyParser = require("body-parser");
 var mysql = require("mysql");
@@ -17,6 +18,7 @@ app.set("view engine", "handlebars");
 // app.use(express.static(path.join(__dirname, '/public')));
 // app.use(express.static("public"));
 //app.use("/", router);
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 var routes = require("./controllers/burgers_controller.js");
