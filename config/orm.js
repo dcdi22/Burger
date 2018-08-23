@@ -11,27 +11,27 @@
 var connection = require("./connection.js");
 
 var orm = {
-    selectAll: function(tableData, cb) {
+    selectAll: function (tableData, cb) {
         var queryString = "SELECT * FROM ??";
-        connection.query(queryString, [tableData], function(err, res){
+        connection.query(queryString, [tableData], function (err, res) {
             if (err) throw err;
             cb(res);
         });
     },
-    insertOne: function(tableData, colData, valData, cb) {
+    insertOne: function (tableData, colData, valData, cb) {
         var queryString = "INSERT INTO ?? (??) VALUES (?)";
-        connection.query(queryString, [tableData, colData, valData], function(err, res) {
+        connection.query(queryString, [tableData, colData, valData], function (err, res) {
             if (err) throw err;
             cb(res);
         });
     },
-    updateOne: function(tableData, updateCol, updateVal, colData, valData, cb) {
+    updateOne: function (tableData, updateCol, updateVal, colData, valData, cb) {
         var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-        connection.query(queryString, [tableData, updateCol, updateVal, colData], function(err, res){
+        connection.query(queryString, [tableData, updateCol, updateVal, colData, valData], function (err, res) {
             if (err) throw err;
             cb(res);
         });
     }
 };
 
-module.exports =  orm;
+module.exports = orm;

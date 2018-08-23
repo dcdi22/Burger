@@ -1,5 +1,5 @@
 -- Create 3 insert queries 
 INSERT INTO burgers (burger_name) VALUES
-("Kimchi Burger"),
-("Luther Burger"),
-("Aussie Burger");
+("ALPINE STEAK HOUSE BURGER"),
+("CLASSIC BYPASS BURGER"),
+("KA’MANA WA’NA LEI’YA BURGER");
